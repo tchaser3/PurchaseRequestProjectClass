@@ -283,6 +283,8 @@ namespace PurchaserRequestProjectsDLL {
             
             private global::System.Data.DataColumn columnPONumber;
             
+            private global::System.Data.DataColumn columnJobNumber;
+            
             private global::System.Data.DataColumn columnProjectID;
             
             private global::System.Data.DataColumn columnAssignedProjectID;
@@ -359,6 +361,14 @@ namespace PurchaserRequestProjectsDLL {
             public global::System.Data.DataColumn PONumberColumn {
                 get {
                     return this.columnPONumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn JobNumberColumn {
+                get {
+                    return this.columnJobNumber;
                 }
             }
             
@@ -519,11 +529,28 @@ namespace PurchaserRequestProjectsDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindPurchaseRequestProjectByProjectIDRow AddFindPurchaseRequestProjectByProjectIDRow(int ProjectID, string AssignedProjectID, string ProjectName, System.DateTime RequestDate, System.DateTime RequiredDate, string FirstName, string LastName, int DepartmentHeadID, string Department, int OfficeID, string VendorName, bool RequestApproved, System.DateTime ApprovalDate, string CurrentStatus, System.DateTime DateComplete) {
+            public FindPurchaseRequestProjectByProjectIDRow AddFindPurchaseRequestProjectByProjectIDRow(
+                        string JobNumber, 
+                        int ProjectID, 
+                        string AssignedProjectID, 
+                        string ProjectName, 
+                        System.DateTime RequestDate, 
+                        System.DateTime RequiredDate, 
+                        string FirstName, 
+                        string LastName, 
+                        int DepartmentHeadID, 
+                        string Department, 
+                        int OfficeID, 
+                        string VendorName, 
+                        bool RequestApproved, 
+                        System.DateTime ApprovalDate, 
+                        string CurrentStatus, 
+                        System.DateTime DateComplete) {
                 FindPurchaseRequestProjectByProjectIDRow rowFindPurchaseRequestProjectByProjectIDRow = ((FindPurchaseRequestProjectByProjectIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
+                        JobNumber,
                         ProjectID,
                         AssignedProjectID,
                         ProjectName,
@@ -563,6 +590,7 @@ namespace PurchaserRequestProjectsDLL {
             internal void InitVars() {
                 this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnPONumber = base.Columns["PONumber"];
+                this.columnJobNumber = base.Columns["JobNumber"];
                 this.columnProjectID = base.Columns["ProjectID"];
                 this.columnAssignedProjectID = base.Columns["AssignedProjectID"];
                 this.columnProjectName = base.Columns["ProjectName"];
@@ -587,6 +615,8 @@ namespace PurchaserRequestProjectsDLL {
                 base.Columns.Add(this.columnTransactionID);
                 this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPONumber);
+                this.columnJobNumber = new global::System.Data.DataColumn("JobNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJobNumber);
                 this.columnProjectID = new global::System.Data.DataColumn("ProjectID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectID);
                 this.columnAssignedProjectID = new global::System.Data.DataColumn("AssignedProjectID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -623,6 +653,8 @@ namespace PurchaserRequestProjectsDLL {
                 this.columnPONumber.AutoIncrement = true;
                 this.columnPONumber.AllowDBNull = false;
                 this.columnPONumber.ReadOnly = true;
+                this.columnJobNumber.AllowDBNull = false;
+                this.columnJobNumber.MaxLength = 2147483647;
                 this.columnProjectID.AllowDBNull = false;
                 this.columnAssignedProjectID.AllowDBNull = false;
                 this.columnAssignedProjectID.MaxLength = 2147483647;
@@ -802,6 +834,17 @@ namespace PurchaserRequestProjectsDLL {
                 }
                 set {
                     this[this.tableFindPurchaseRequestProjectByProjectID.PONumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string JobNumber {
+                get {
+                    return ((string)(this[this.tableFindPurchaseRequestProjectByProjectID.JobNumberColumn]));
+                }
+                set {
+                    this[this.tableFindPurchaseRequestProjectByProjectID.JobNumberColumn] = value;
                 }
             }
             
@@ -1168,6 +1211,7 @@ namespace PurchaserRequestProjectsDLL.FindPurchaseRequestProjectByProjectIDDataS
             tableMapping.DataSetTable = "FindPurchaseRequestProjectByProjectID";
             tableMapping.ColumnMappings.Add("TransactionID", "TransactionID");
             tableMapping.ColumnMappings.Add("PONumber", "PONumber");
+            tableMapping.ColumnMappings.Add("JobNumber", "JobNumber");
             tableMapping.ColumnMappings.Add("ProjectID", "ProjectID");
             tableMapping.ColumnMappings.Add("AssignedProjectID", "AssignedProjectID");
             tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
